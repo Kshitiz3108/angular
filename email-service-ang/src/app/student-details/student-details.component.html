@@ -1,0 +1,25 @@
+
+
+
+
+<app-menus></app-menus>
+<div class="menu-content">
+  <h2>Student Details</h2> 
+  <div *ngIf="student">
+    <div>
+      <label><b>Student Name: </b></label> {{student.student_name}}
+    </div>
+    <div>
+      <label><b>Student Email: </b></label> {{student.student_email}}
+    </div>
+    <div>
+      <label><b>Student Branch </b></label> {{student.student_branch}}
+    </div>  
+  </div>
+  
+  <br>
+  <br>
+  <button (click)="list()" class="btn btn-primary">Back to Student List</button><br>
+      <router-outlet class="justify-content-center"></router-outlet>  
+  
+</div>

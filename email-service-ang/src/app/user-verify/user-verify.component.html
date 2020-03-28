@@ -1,0 +1,30 @@
+<div class="menu-content">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2>User List</h2>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of Users | async">
+              <td>{{user.user_id}}</td>
+              <td>{{user.user_name}}</td>
+              <td>{{user.user_password}}</td>
+              <td><button (click)="verifyUser(user.user_id)" class="btn btn-danger">Verify</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+

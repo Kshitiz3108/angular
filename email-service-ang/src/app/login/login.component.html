@@ -1,0 +1,41 @@
+
+<div id="back">
+    <div class="backRight"></div>
+    <div class="backLeft"></div>
+  </div>
+  
+  <div id="slideBox">
+    <div class="topLayer">
+      <div class="left">
+        <div class="content">
+          <h2>Sign Up</h2>
+          <form (ngSubmit)="onsignup()" ngNativeValidate>
+            <div class="form-group">
+              <input type="text" placeholder="Please Enter Username" id="username" required [(ngModel)]="user.user_name" name="username" />
+              <input type="password" placeholder="Please Enter password" id="password" required [(ngModel)]="user.user_password" name="password"/>
+            </div>
+          <button id="goLeft" class="off" type="button">Login</button>
+          <button id="signup" type="submit" onclick="this.form.reset">Sign up</button>
+          <p *ngIf="ifVisibility" style="color:white"><i class="fa fa-exclamation-circle" *ngIf="ifVisibility"></i>{{signup_message}}</p>
+        </form>
+        </div>
+      </div>
+          <div class="right">
+              <div class="content">
+                <h2>Login</h2>
+                <form method="post" (ngSubmit)="onLogin()" ngNativeValidate>
+                  <div class="form-group">        
+                    <input type="emial" placeholder="Please Enter Username" id="usernameLOGIN" [(ngModel)]="user1.user_name" name="usernameLogin" required/>
+                    <input type="password" placeholder="Please Enter password" id="passwordLOGIN" [(ngModel)]="user1.user_password" name="passwordLogin" required/>  <br>
+                  </div>
+                  <button id="goRight" class="off" type="button" >Sign Up</button>
+                  <button id="login" type="submit" onclick="this.form.reset">Login</button>
+          
+                 <p *ngIf="isVisible"><i class="fa fa-exclamation-circle" *ngIf="isVisible"></i>{{login_message}}</p>
+                </form>
+              </div>
+            </div>
+          </div>
+  </div>
+  
+  <!--Inspiration from: http://ertekinn.com/loginsignup/-->
